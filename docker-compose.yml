@@ -1,0 +1,23 @@
+---
+version: "3.3"
+services:
+  dns:
+    image: qmcgaw/dns
+    container_name: dns
+    environment:
+      - UPSTREAM_TYPE=DoT
+      - LOG_LEVEL=info
+      - BLOCK_MALICIOUS=on
+      - BLOCK_SURVEILLANCE=on
+      - BLOCK_ADS=on
+      - BLOCK_IPS=
+      - BLOCK_HOSTNAMES=
+      - ALLOWED_HOSTNAMES=
+      - DOT_RESOLVERS=cloudflare,google
+      - DOH_RESOLVERS=cloudflare,google
+      - UPDATE_PERIOD=24h
+    ports:
+      - 53:53/udp
+    network_mode: bridge
+    restart: always
+
