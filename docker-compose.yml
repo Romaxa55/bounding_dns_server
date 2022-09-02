@@ -9,6 +9,7 @@ services:
       - LOG_LEVEL=info
       - BLOCK_MALICIOUS=on
       - BLOCK_SURVEILLANCE=on
+      - DOT_CONNECT_IPV6=on
       - BLOCK_ADS=on
       - BLOCK_IPS=
       - BLOCK_HOSTNAMES=
